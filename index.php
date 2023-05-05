@@ -8,9 +8,9 @@
  
   if(!empty($_GET["passwordLenght"])){
      while ($i < $number) {
-    $number_random=rand(0, $lenChars -1);
-    $randomPassword=$chars[$number_random];
-    $i++;
+            $number_random=rand(0, $lenChars -1);
+            $randomPassword=$chars[$number_random];
+            $i++;
   }
  } 
 
