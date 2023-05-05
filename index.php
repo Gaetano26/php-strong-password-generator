@@ -6,7 +6,7 @@
   $chars ="abcdefghijlmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ0123456789_?*+&%!#@";
   $lenChars=strlen($chars);
  
-  if(!empty($_GET["passwordLenght"])){
+  if(!empty($_GET["getNumber"])){
      while ($i < $number) {
             $number_random=rand(0, $lenChars -1);
             $randomPassword=$chars[$number_random];
