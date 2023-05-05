@@ -1,6 +1,6 @@
 <?php
-session_start();
 include __DIR__ . '/function/function.php' ;
+generatePassword();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@ include __DIR__ . '/function/function.php' ;
     <div class="text-center">
         <h1 class="mt-5">La tua password è</h1>
         <?php if (!empty($_SESSION['password'])) { ?>
-             <p><?php echo generatePassword() ?></p>
+             <p><?php echo $_SESSION['password'] ?></p>
         <?php } else {
             header('Location: ./index.php');
         } ?>

@@ -1,13 +1,3 @@
-<?php
-session_start();
-include __DIR__ . '/function/function.php' ;
-$_SESSION['password'] = true ;
-?>
-
-
-
-
-
 
 
 <!DOCTYPE html>

@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 function generatePassword() {
     $i = 0 ;
     $randomPassword = '';
@@ -15,6 +17,6 @@ function generatePassword() {
    } 
   
     
-  return $randomPassword;  
+   $_SESSION['password'] =  $randomPassword;
  };
 ?>
