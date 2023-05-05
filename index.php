@@ -1,20 +1,7 @@
 <?php
 
-  $i = 0 ;
-  $randomPassword = '';
-  $number = $_GET['getNumber'];
-  $chars ="abcdefghijlmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ0123456789_?*+&%!#@";
-  $lenChars=strlen($chars);
+include __DIR__ . '/function/function.php' ;
  
-  if(!empty($_GET["getNumber"])){
-     while ($i < $number) {
-            $number_random=rand(0, $lenChars -1);
-            $randomPassword=$chars[$number_random];
-            $i++;
-  }
- } 
-
-
 ?>
 
 
@@ -35,17 +22,18 @@
     <title>Document</title>
 </head>
 <body class="bg-primary">
-    <header class="d-flex flex-column gap-2 justify-content-center align-items-center pt-5">
-       <h1 class="text-white">Cerca il Tuo Hotel</h1>
-      <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
+    <header class="d-flex  flex-column gap-2 justify-content-center align-items-center pt-5">
+       <h1 class="text-white">Inserisci il numero di caratteri e genera la password</h1>
+       <h4 class="text-white">(min = 8 max = 32 )</h4>
+      <form class="d-flex gap-3" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
         <input type="number"  class="form-control" min="8" max="32" name="getNumber">
         <button type="submit">Cerca</button>
       </form>
     </header> 
-    <main class="d-flex align-items-center justify-content-center" >
-        <div class="container">
+    <main>
+        <div class="container d-flex align-items-center justify-content-center mt-5">
             
-           <h1><?php echo $randomPassword ?></h1>
+           <h4 class="text-white"><?php  echo 'La tua password è:' . ' ' .  generatePassword(); ?></h4>
     
     </main>
     
