@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 include __DIR__ . '/function/function.php' ;
- 
+$_SESSION['password'] = true ;
 ?>
 
 
@@ -25,17 +25,11 @@ include __DIR__ . '/function/function.php' ;
     <header class="d-flex  flex-column gap-2 justify-content-center align-items-center pt-5">
        <h1 class="text-white">Inserisci il numero di caratteri e genera la password</h1>
        <h4 class="text-white">(min = 8 max = 32 )</h4>
-      <form class="d-flex gap-3" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
+      <form class="d-flex gap-3" action="result.php" method="GET">
         <input type="number"  class="form-control" min="8" max="32" name="getNumber">
         <button type="submit">Cerca</button>
       </form>
-    </header> 
-    <main>
-        <div class="container d-flex align-items-center justify-content-center mt-5">
-            
-           <h4 class="text-white"><?php  echo 'La tua password è:' . ' ' .  generatePassword(); ?></h4>
-    
-    </main>
+  
     
 </body>
 </html>
