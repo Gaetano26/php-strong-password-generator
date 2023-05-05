@@ -1,16 +1,18 @@
 <?php
+
   $i = 0 ;
   $randomPassword = '';
   $number = $_GET['getNumber'];
   $chars ="abcdefghijlmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ0123456789_?*+&%!#@";
   $lenChars=strlen($chars);
-  
-  while ($i < $number) {
+ 
+  if(!empty($_GET["passwordLenght"])){
+     while ($i < $number) {
     $number_random=rand(0, $lenChars -1);
     $randomPassword=$chars[$number_random];
     $i++;
   }
-  
+ } 
 
 
 ?>
@@ -36,7 +38,7 @@
     <header class="d-flex flex-column gap-2 justify-content-center align-items-center pt-5">
        <h1 class="text-white">Cerca il Tuo Hotel</h1>
       <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
-        <input type="number" id="quantity" min="8" max="32" name="getNumber">
+        <input type="number"  class="form-control" min="8" max="32" name="getNumber">
         <button type="submit">Cerca</button>
       </form>
     </header> 
